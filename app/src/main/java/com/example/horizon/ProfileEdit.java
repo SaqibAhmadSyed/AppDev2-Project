@@ -1,7 +1,9 @@
 package com.example.horizon;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileEdit extends AppCompatActivity {
     TextView username;
@@ -45,7 +50,23 @@ public class ProfileEdit extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileEdit.this)
+                        .setTitle("WARNING!")
+                        .setMessage("Are you sure you want to delete this account?")
+                        .setCancelable(false);
 
+                builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    FirebaseDatabase.getInstance().getReference("users/"+str).removeValue();
+
+                    Intent i = new Intent(ProfileEdit.this, SignIn.class);
+                    Toast.makeText(ProfileEdit.this, "User Deleted", Toast.LENGTH_SHORT).show();
+                    startActivity(i);
+                });
+                builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    dialog.cancel();
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         });
 
