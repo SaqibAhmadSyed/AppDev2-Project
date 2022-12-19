@@ -19,6 +19,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -41,6 +42,7 @@ public class FindStore extends AppCompatActivity implements OnMapReadyCallback {
     private FusedLocationProviderClient client;
     private SupportMapFragment mapFragment;
     private int REQUEST_CODE = 44;
+    TextView username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +53,16 @@ public class FindStore extends AppCompatActivity implements OnMapReadyCallback {
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
         client = LocationServices.getFusedLocationProviderClient(this);
-
+        username = findViewById(R.id.username);
+        String str = getIntent().getStringExtra("key");
+        username.setText(str);
         ImageButton back = (ImageButton) findViewById(R.id.back);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent g = new Intent(FindStore.this, Homepage.class);
+                g.putExtra("key", str);
                 startActivity(g);
             }
         });

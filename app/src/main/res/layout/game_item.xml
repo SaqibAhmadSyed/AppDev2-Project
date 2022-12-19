@@ -3,110 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="656dp">
-
+            android:layout_height="303dp">
 
             <Button
                 android:id="@+id/sendtocart"
-                android:layout_width="129dp"
-                android:layout_height="wrap_content"
+                android:layout_width="151dp"
+                android:layout_height="60dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="91dp"
-                android:layout_marginEnd="35dp"
-                android:text="sendtocart">
-
-            </Button>
+                android:layout_marginTop="136dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#ED7DFA42"
+                android:gravity="center"
+                android:text="sendtocart"
+                android:textColor="@color/black"></Button>
 
             <ImageView
-
-                android:id="@+id/image"
-                android:layout_width="220dp"
-                android:layout_height="137dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="186dp">
-
-            </ImageView>
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="3dp"></ImageView>
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="177dp"
-                android:layout_height="57dp"
+                android:layout_width="202dp"
+                android:layout_height="62dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="229dp"
-                android:layout_marginTop="11dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="146dp"
                 android:gravity="center" />
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/genre"-->
-            <!--                android:layout_width="224dp"-->
-            <!--                android:layout_height="82dp"-->
-            <!--                android:layout_alignParentStart="true"-->
-            <!--                android:layout_alignParentTop="true"-->
-            <!--                android:layout_marginStart="15dp"-->
-            <!--                android:layout_marginTop="403dp"-->
-            <!--                android:gravity="center" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/description"-->
-            <!--                android:layout_width="218dp"-->
-            <!--                android:layout_height="79dp"-->
-            <!--                android:layout_alignParentStart="true"-->
-            <!--                android:layout_alignParentTop="true"-->
-            <!--                android:layout_marginStart="20dp"-->
-            <!--                android:layout_marginTop="405dp"-->
-            <!--                android:gravity="center" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/release"-->
-            <!--                android:layout_width="223dp"-->
-            <!--                android:layout_height="81dp"-->
-            <!--                android:layout_alignParentStart="true"-->
-            <!--                android:layout_alignParentTop="true"-->
-            <!--                android:layout_marginStart="-1dp"-->
-            <!--                android:layout_marginTop="408dp"-->
-            <!--                android:gravity="center" />-->
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/publisher"-->
-            <!--                android:layout_width="224dp"-->
-            <!--                android:layout_height="76dp"-->
-            <!--                android:layout_alignParentStart="true"-->
-            <!--                android:layout_alignParentTop="true"-->
-            <!--                android:layout_marginStart="7dp"-->
-            <!--                android:layout_marginTop="432dp"-->
-            <!--                android:gravity="center" />-->
-
-
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="202dp"
+                android:layout_height="62dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="213dp"
+                android:gravity="center" />
         </RelativeLayout>
-
-
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

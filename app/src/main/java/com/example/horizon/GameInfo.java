@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 
 public class GameInfo extends AppCompatActivity {
 
-    TextView title,genre,publisher,date,des;
+    TextView title,genre,publisher,date,des, username;
     ImageView thumbnail;
     ImageButton back;
 
@@ -26,7 +26,9 @@ public class GameInfo extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_game_info);
-
+        username = findViewById(R.id.username);
+        String str = getIntent().getStringExtra("key");
+        username.setText(str);
 
         Bundle extras = getIntent().getExtras();
         String picture = extras.getString("thumbnail");
@@ -64,6 +66,7 @@ public class GameInfo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent next = new Intent(GameInfo.this, AvailableGames.class);
+                next.putExtra("key" ,str);
                 startActivity(next);
             }
         });

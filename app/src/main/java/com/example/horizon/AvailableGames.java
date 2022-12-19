@@ -1,5 +1,6 @@
 package com.example.horizon;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,10 +12,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,31 +41,37 @@ public class AvailableGames extends AppCompatActivity {
     GameAdapter adapter;
     List<Game> gameList = new ArrayList<>();
     GameAdapter.RecyclerViewClickListener listener;
+    DatabaseReference db;
+    TextView username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-
         setContentView(R.layout.activity_available_games);
+
         gamerecyclerView = findViewById(R.id.gamerecycler);
         layoutManager = new LinearLayoutManager(this);
         gamerecyclerView.setLayoutManager(layoutManager);
-        setOnClickListener();
-        adapter = new GameAdapter(gameList,this, listener);
+        username = findViewById(R.id.username);
+        String str = getIntent().getStringExtra("key");
+        username.setText(str);
+        setOnClickListener(str);
+        adapter = new GameAdapter(gameList,this, listener, str);
         gamerecyclerView.setAdapter(adapter);
         getGames();
         back = findViewById(R.id.back);
 
-
-
+        db = FirebaseDatabase.getInstance().getReference("games");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent back = new Intent(AvailableGames.this, Homepage.class);
+                back.putExtra("key", str);
                 startActivity(back);
+
             }
         });
 
@@ -65,9 +79,8 @@ public class AvailableGames extends AppCompatActivity {
 
 
     }
-    private void setOnClickListener(){
+    private void setOnClickListener(String username){
         listener = new GameAdapter.RecyclerViewClickListener(){
-
             @Override
             public void onClick(View v, int position) {
                 Intent intent = new Intent(getApplicationContext(), GameInfo.class);
@@ -78,6 +91,7 @@ public class AvailableGames extends AppCompatActivity {
                 intent.putExtra("description",gameList.get(position).getShort_description());
                 intent.putExtra("genre",gameList.get(position).getGenre());
                 intent.putExtra("money",gameList.get(position).getPrice());
+                intent.putExtra("key", username);
                 startActivity(intent);
             }
         };
@@ -90,6 +104,19 @@ public class AvailableGames extends AppCompatActivity {
                 if(response.isSuccessful()&& response.body() != null){
                     gameList.addAll(response.body());
                     adapter.notifyDataSetChanged();
+
+                        /* to add the game in firebase once */
+//                    db.addListenerForSingleValueEvent(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                                db.setValue(gameList);
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError error) {
+//
+//                        }
+//                    });
                 }
             }
 

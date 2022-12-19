@@ -46,7 +46,7 @@ public class CreateUser extends AppCompatActivity {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference("users");
+                db = FirebaseDatabase.getInstance().getReference("games");
 
                 String firstName = firstN.getText().toString();
                 String lastName = lastN.getText().toString();

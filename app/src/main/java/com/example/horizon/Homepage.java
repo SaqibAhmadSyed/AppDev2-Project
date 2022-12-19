@@ -42,6 +42,7 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Homepage.this, AvailableGames.class);
+                intent.putExtra("key", str);
                 startActivity(intent);
             }
         });
@@ -50,6 +51,7 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Homepage.this, Cart.class);
+                intent.putExtra("key", str);
                 startActivity(intent);
             }
         });

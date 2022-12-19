@@ -3,6 +3,7 @@ package com.example.horizon;
 import java.util.Random;
 
 public class Game {
+    Random rand = new Random();
 
     private String title;
     private String short_description;
@@ -10,17 +11,15 @@ public class Game {
     private String publisher;
     private String release_date;
     private String thumbnail;
-    private double price;
 
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    double randomDouble = 50 + (60 - 50) * rand.nextDouble();
+    String formattedDouble = String.format("%.2f", randomDouble);
+    double result = Double.parseDouble(formattedDouble);
+    private double price = result;
 
     public Game(){
 
     }
-
 
     public Game(String title, String short_description, String genre, String publisher, String release_date, String thumbnail, double price) {
         this.title = title;
@@ -34,22 +33,18 @@ public class Game {
 
     public Game(String title, String short_description, String genre, String publisher, String release_date, String thumbnail) {
 
-
         this.title = title;
         this.short_description = short_description;
         this.genre = genre;
         this.publisher = publisher;
         this.release_date = release_date;
         this.thumbnail = thumbnail;
-        Random rand = new Random();
-
-        double randomDouble = 50 + (60 - 50) * rand.nextDouble();
-        String formattedDouble = String.format("%.2f", randomDouble);
-        double result = Double.parseDouble(formattedDouble);
-
         this.price = result;
+    }
 
-
+    public Game(String title, double price) {
+        this.title = title;
+        this.price = result;
     }
 
     public String getTitle() {
@@ -103,6 +98,9 @@ public class Game {
         return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
     @Override
     public String toString() {
         return "Game{" +

@@ -15,39 +15,48 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
+public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
     private RecyclerViewClickListener listener;
     private List<Game> gameList;
     private Context context;
-    static List<Game> listcart;
+    static List<Game> cart;
+    String username;
+    String work;
+    double pr;
+    DatabaseReference db;
 
 
-    public GameAdapter(List<Game> gameList, Context context, RecyclerViewClickListener listener) {
+    public GameAdapter(List<Game> gameList, Context context, RecyclerViewClickListener listener, String username) {
         this.gameList = gameList;
         this.context = context;
         this.listener = listener;
+        this.username = username;
     }
 
 
-
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        TextView title,des, publ, genre,date;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView title, price;
         ImageView image;
         Button tocart;
-
-
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
-
-            image = itemView.findViewById(R.id.image);
-           tocart = itemView.findViewById(R.id.sendtocart);
+            price = itemView.findViewById(R.id.price);
+            image = itemView.findViewById(R.id.thumbnail);
+            tocart = itemView.findViewById(R.id.sendtocart);
 
             itemView.setOnClickListener(this);
 
@@ -61,7 +70,6 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
     }
 
 
-
     @NonNull
     @Override
     public GameAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -73,16 +81,29 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull GameAdapter.ViewHolder holder, int position) {
         holder.title.setText(gameList.get(position).getTitle());
+        holder.price.setText(String.valueOf(gameList.get(position).getPrice()));
+        Glide.with(context).load(gameList.get(position).getThumbnail()).into(holder.image);
 
-
-      Glide.with(context).load(gameList.get(position).getThumbnail()).into(holder.image);
-
-      //listcart.add(new Game(gameList.get(position).getTitle(),gameList.get(position).getShort_description(),gameList.get(position).getGenre(),gameList.get(position).getPublisher(),gameList.get(position).getRelease_date(),gameList.get(position).getThumbnail(),gameList.get(position).getPrice()));
         holder.tocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "ADDED TO CART: ", Toast.LENGTH_SHORT).show();
+                work = gameList.get(holder.getAdapterPosition()).getTitle();
+                pr = gameList.get(holder.getAdapterPosition()).getPrice();
 
+                db = FirebaseDatabase.getInstance().getReference("cart");
+
+                db.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        db.child(username).child(gameList.get(holder.getAdapterPosition()).getTitle()).setValue(gameList.get(holder.getAdapterPosition()));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Toast.makeText(view.getContext(), "ADDED TO CART: " + gameList.get(holder.getAdapterPosition()).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -94,7 +115,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder>{
         return gameList.size();
     }
 
-    public interface RecyclerViewClickListener{
+    public interface RecyclerViewClickListener {
         void onClick(View v, int position);
     }
 }
