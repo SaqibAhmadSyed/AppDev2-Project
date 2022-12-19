@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DAD0D0"
+    tools:context=".Findstores">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+        //LOGo
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+
+            <TextView
+                android:layout_width="109dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#D58383"
+                android:gravity="center"
+                android:rotation="-20"
+                android:text="HORIZON GAME STORE">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="141dp"
+                android:layout_height="57dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="78dp"
+                android:gravity="center"
+                android:hint="user"
+                android:textSize="25dp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="76dp"
+                android:layout_height="56dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="0dp"
+                android:src="@drawable/gamecontroller">
+
+            </ImageView>
+
+            <ImageButton
+                android:layout_width="115dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                android:id="@+id/back"
+                android:src="@drawable/backarrow">
+            </ImageButton>
+
+            <TextView
+                android:layout_width="228dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="49dp"
+                android:layout_marginBottom="1dp"
+                android:text="FIND STORES"
+                android:textSize="30dp" />
+
+
+        </RelativeLayout>
+
+        <fragment
+            android:id="@+id/mapView"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="400dp"
+            android:layout_height="580dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName17" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

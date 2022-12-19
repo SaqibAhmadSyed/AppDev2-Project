@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Homepage"
+
+    android:background="#CE8282">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="WELCOME"
+                android:textSize="20dp">
+
+            </TextView>
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MENU"
+            android:textSize="30sp">
+
+
+        </TextView>
+        // available games
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="25dp"
+                android:text="AVAILABLE GAMES"
+                android:textColor="@color/white"
+                android:textSize="30sp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/availableGamme"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/gamecontroller"
+                android:layout_alignParentRight="true"
+                android:background="#6F9CEF">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+        //search games
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEARCH GAMES"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:id="@+id/se"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/searchicon"
+                android:layout_alignParentRight="true"
+                android:background="#BF360C">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+        //cart
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CURRENT CART"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:id="@+id/cart"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/cart"
+                android:layout_alignParentRight="true"
+                android:background="#D3B72E">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+        //game review
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GAME REVIEWS"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:id="@+id/gameReview"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/rate"
+                android:layout_alignParentRight="true"
+                android:background="#A428D8">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+        //profile edit
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE EDIT"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:id="@+id/profileEdit"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/usericon"
+                android:layout_alignParentRight="true"
+                android:background="#51A33F">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+        //check out
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHECK OUT"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:id="@+id/checkout"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/handmoneyicon"
+                android:layout_alignParentRight="true"
+                android:background="#E65946">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+        //find stores
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FIND STORES"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:id="@+id/findStore"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/location"
+                android:layout_alignParentRight="true"
+                android:background="#EA04CC">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+        //App Settings
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APP SETTINGS"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:id="@+id/setting"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/settings"
+                android:layout_alignParentRight="true"
+                android:background="#827717">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+        //GAME news
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GAME NEWS"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:id="@+id/news"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/news"
+                android:layout_alignParentRight="true"
+                android:background="#004D40">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+        //LOGOUT
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGOUT"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:padding="25dp">
+
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="continue"
+                android:id="@+id/logout"
+                android:background="#00000000"
+                android:padding="20dp"
+                android:layout_alignParentBottom="true">
+
+            </Button>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/logout"
+                android:layout_alignParentRight="true"
+                android:background="@color/white">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
