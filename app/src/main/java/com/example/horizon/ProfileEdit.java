@@ -61,7 +61,7 @@ public class ProfileEdit extends AppCompatActivity {
         modifyPwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ProfileEdit.this, ModifyPassword.class);
+                Intent i = getIntent();
                 i.putExtra("key",str);
                 startActivity(i);
             }

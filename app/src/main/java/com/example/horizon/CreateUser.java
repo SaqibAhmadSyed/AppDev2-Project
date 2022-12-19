@@ -94,6 +94,7 @@ public class CreateUser extends AppCompatActivity {
                             Toast.makeText(CreateUser.this, "This username already exists.", Toast.LENGTH_SHORT).show();
                             return;
                         } else {
+
                             db.child(userN).setValue(users);
 
                             Intent intent = new Intent(CreateUser.this, SignIn.class);
