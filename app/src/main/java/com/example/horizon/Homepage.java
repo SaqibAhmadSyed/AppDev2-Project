@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class Homepage extends AppCompatActivity {
     TextView username;
-    Button profileEdit , availableGames , cart;
+    Button profileEdit , availableGames , cart, findStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class Homepage extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_homepage);
 
+        findStore = findViewById(R.id.findStore);
         profileEdit = findViewById(R.id.profileEdit);
         availableGames = findViewById(R.id.availableGamme);
         username = findViewById(R.id.username);
@@ -49,6 +50,15 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Homepage.this, Cart.class);
+                startActivity(intent);
+            }
+        });
+
+        findStore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homepage.this, FindStore.class);
+                intent.putExtra("key", str);
                 startActivity(intent);
             }
         });
