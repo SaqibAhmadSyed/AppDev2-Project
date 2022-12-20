@@ -2,6 +2,7 @@ package com.example.horizon;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,8 +25,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,6 +46,7 @@ public class AvailableGames extends AppCompatActivity {
     GameAdapter.RecyclerViewClickListener listener;
     DatabaseReference db;
     TextView username;
+    SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +59,25 @@ public class AvailableGames extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         gamerecyclerView.setLayoutManager(layoutManager);
         username = findViewById(R.id.username);
+
+
+        searchView = findViewById(R.id.search);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+        });
+
         String str = getIntent().getStringExtra("key");
+
         username.setText(str);
         setOnClickListener(str);
         adapter = new GameAdapter(gameList,this, listener, str);
@@ -125,5 +147,20 @@ public class AvailableGames extends AppCompatActivity {
                 Toast.makeText(AvailableGames.this, "Error", Toast.LENGTH_SHORT);
             }
         });
+    }
+    private void filterList(String text){
+        List<Game> filterList = new ArrayList<>();
+
+        for(Game game : gameList){
+            if(game.getTitle().toLowerCase().contains(text.toLowerCase())){
+                filterList.add(game);
+            }
+        }
+        if(filterList.isEmpty()){
+            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+        }else{
+            adapter.setFilteredList(filterList);
+        }
+
     }
 }

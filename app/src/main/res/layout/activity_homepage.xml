@@ -81,45 +81,7 @@
 
 
         </RelativeLayout>
-        //search games
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@color/black"
-            android:layout_margin="10dp">
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SEARCH GAMES"
-                android:textSize="30sp"
-                android:textColor="@color/white"
-                android:padding="25dp">
-
-            </TextView>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="continue"
-                android:id="@+id/se"
-                android:background="#00000000"
-                android:padding="20dp"
-                android:layout_alignParentBottom="true">
-
-            </Button>
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/searchicon"
-                android:layout_alignParentRight="true"
-                android:background="#BF360C">
-
-            </ImageView>
-
-
-        </RelativeLayout>
         //cart
         <RelativeLayout
             android:layout_width="match_parent"
@@ -161,44 +123,7 @@
         </RelativeLayout>
 
         //game review
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@color/black"
-            android:layout_margin="10dp">
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="GAME REVIEWS"
-                android:textSize="30sp"
-                android:textColor="@color/white"
-                android:padding="25dp">
-
-            </TextView>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="continue"
-                android:background="#00000000"
-                android:padding="20dp"
-                android:id="@+id/gameReview"
-                android:layout_alignParentBottom="true">
-
-            </Button>
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/rate"
-                android:layout_alignParentRight="true"
-                android:background="#A428D8">
-
-            </ImageView>
-
-
-        </RelativeLayout>
 
         //profile edit
         <RelativeLayout
@@ -240,45 +165,7 @@
 
         </RelativeLayout>
 
-        //check out
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@color/black"
-            android:layout_margin="10dp">
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CHECK OUT"
-                android:textSize="30sp"
-                android:textColor="@color/white"
-                android:padding="25dp">
-
-            </TextView>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="continue"
-                android:background="#00000000"
-                android:padding="20dp"
-                android:id="@+id/checkout"
-                android:layout_alignParentBottom="true">
-
-            </Button>
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/handmoneyicon"
-                android:layout_alignParentRight="true"
-                android:background="#E65946">
-
-            </ImageView>
-
-
-        </RelativeLayout>
 
         //find stores
         <RelativeLayout

@@ -87,10 +87,20 @@
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/search">
+
+            </androidx.appcompat.widget.SearchView>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/gamerecycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="516dp"
+                android:layout_below="@+id/search">
 
             </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>

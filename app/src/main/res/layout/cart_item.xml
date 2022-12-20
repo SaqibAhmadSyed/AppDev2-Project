@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="201dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,13 +21,12 @@
                 android:layout_height="60dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="136dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="139dp"
+                android:layout_marginEnd="8dp"
                 android:backgroundTint="#EDF44761"
                 android:gravity="center"
                 android:text="DELETE FROM CART"
-                android:textColor="@color/black">
-            </Button>
+                android:textColor="@color/black"></Button>
 
             <ImageView
 
@@ -36,28 +35,30 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="0dp"
-                android:layout_marginBottom="3dp">
+                android:layout_marginBottom="5dp">
 
             </ImageView>
 
             <TextView
                 android:id="@+id/titlecart"
-                android:layout_width="202dp"
-                android:layout_height="62dp"
+                android:layout_width="237dp"
+                android:layout_height="38dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="152dp"
+                android:background="#F39292"
                 android:gravity="center" />
 
             <TextView
                 android:id="@+id/pricecart"
-                android:layout_width="150dp"
-                android:layout_height="63dp"
+                android:layout_width="104dp"
+                android:layout_height="30dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="238dp"
-                android:layout_marginTop="38dp"
+                android:layout_marginStart="294dp"
+                android:layout_marginTop="111dp"
+                android:background="#F39292"
                 android:gravity="center" />
         </RelativeLayout>
     </LinearLayout>

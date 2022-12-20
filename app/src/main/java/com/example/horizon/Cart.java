@@ -15,8 +15,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +40,7 @@ public class Cart extends AppCompatActivity {
     DatabaseReference db;
     TextView username;
     LinearLayoutManager layoutManager;
+    Button checkout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class Cart extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_cart);
 
+        checkout = findViewById(R.id.checkout);
         rv = findViewById(R.id.cartrecycler);
         list = new ArrayList<>();
         layoutManager = new LinearLayoutManager(this);
@@ -64,6 +68,28 @@ public class Cart extends AppCompatActivity {
                 Intent back = new Intent(Cart.this, Homepage.class);
                 back.putExtra("key", str);
                 startActivity(back);
+            }
+        });
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                double total = 0.0 ;
+
+                if(list.isEmpty() == true){
+
+                    Toast.makeText(view.getContext(), "YOUR CART IS EMPTY", Toast.LENGTH_SHORT).show();
+                }else{
+                    for(Game game : list){
+                        total += game.getPrice();
+                    }
+                    String tt = String.valueOf(total);
+                    Toast.makeText(view.getContext(), "YOUR TOTAL IS: " + tt+ " THANK YOU FOR SHOPPING", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
             }
         });
     }
@@ -95,5 +121,7 @@ public class Cart extends AppCompatActivity {
 
             }
         });
+
+
     }
 }

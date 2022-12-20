@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class Homepage extends AppCompatActivity {
     TextView username;
-    Button profileEdit , availableGames , cart, findStore;
+    Button profileEdit , availableGames , cart, findStore, news;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class Homepage extends AppCompatActivity {
         profileEdit = findViewById(R.id.profileEdit);
         availableGames = findViewById(R.id.availableGamme);
         username = findViewById(R.id.username);
+        news = findViewById(R.id.news);
         cart = findViewById(R.id.cart);
         String str = getIntent().getStringExtra("key");
         username.setText("WELCOME " + str);
@@ -64,5 +65,14 @@ public class Homepage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homepage.this, GameNews.class);
+                intent.putExtra("key", str);
+                startActivity(intent);
+            }
+        });
+
     }
 }

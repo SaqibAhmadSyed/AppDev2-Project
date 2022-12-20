@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="300dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="411dp"
+        android:layout_height="308dp"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="303dp">
 
+
             <Button
                 android:id="@+id/sendtocart"
-                android:layout_width="151dp"
-                android:layout_height="60dp"
+                android:layout_width="168dp"
+                android:layout_height="61dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="136dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="241dp"
+                android:layout_marginEnd="47dp"
                 android:backgroundTint="#ED7DFA42"
                 android:gravity="center"
                 android:text="sendtocart"
@@ -30,27 +32,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
+
                 android:layout_marginEnd="0dp"
-                android:layout_marginBottom="3dp"></ImageView>
+                android:layout_marginBottom="4dp"
+                android:scaleType="fitCenter"></ImageView>
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="202dp"
-                android:layout_height="62dp"
+                android:layout_width="222dp"
+                android:layout_height="51dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="146dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="247dp"
+                android:background="#F39292"
                 android:gravity="center" />
 
             <TextView
                 android:id="@+id/price"
-                android:layout_width="202dp"
-                android:layout_height="62dp"
+                android:layout_width="122dp"
+                android:layout_height="47dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="213dp"
+                android:layout_marginStart="243dp"
+                android:layout_marginTop="188dp"
+                android:background="#F39292"
                 android:gravity="center" />
         </RelativeLayout>
     </LinearLayout>

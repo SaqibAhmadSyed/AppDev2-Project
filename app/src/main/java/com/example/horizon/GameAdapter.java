@@ -1,5 +1,6 @@
 package com.example.horizon;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -35,6 +36,12 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.ViewHolder> {
     String work;
     double pr;
     DatabaseReference db;
+
+
+    public void setFilteredList(List<Game> filteredList){
+        this.gameList = filteredList;
+        notifyDataSetChanged();
+    }
 
 
     public GameAdapter(List<Game> gameList, Context context, RecyclerViewClickListener listener, String username) {

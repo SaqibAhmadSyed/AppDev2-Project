@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class GameInfo extends AppCompatActivity {
     TextView title,genre,publisher,date,des, username;
     ImageView thumbnail;
     ImageButton back;
+    Button review;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class GameInfo extends AppCompatActivity {
         username = findViewById(R.id.username);
         String str = getIntent().getStringExtra("key");
         username.setText(str);
-
+        review = findViewById(R.id.review);
         Bundle extras = getIntent().getExtras();
         String picture = extras.getString("thumbnail");
         String titlegame = extras.getString("title");
@@ -72,7 +74,15 @@ public class GameInfo extends AppCompatActivity {
         });
 
 
+        review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent next = new Intent(GameInfo.this,Web.class);
+                    next.putExtra("title", titlegame);
+                startActivity(next);
 
+            }
+        });
 
 
 

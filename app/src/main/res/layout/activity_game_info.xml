@@ -96,6 +96,7 @@
                 android:layout_height="121dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:scaleType="fitCenter"
                 android:layout_marginStart="51dp"
                 android:layout_marginTop="20dp">
 
@@ -107,8 +108,8 @@
                 android:layout_height="54dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="181dp">
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="160dp">
 
             </TextView>
 
@@ -119,7 +120,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="48dp"
-                android:layout_marginTop="245dp">
+                android:layout_marginTop="225dp">
 
             </TextView>
 
@@ -130,18 +131,18 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="71dp"
-                android:layout_marginTop="362dp"
+                android:layout_marginTop="350dp"
                 android:layout_marginBottom="136dp">
 
             </TextView>
 
             <TextView
                 android:id="@+id/releasedate"
-                android:layout_width="303dp"
-                android:layout_height="110dp"
+                android:layout_width="301dp"
+                android:layout_height="69dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
+                android:layout_marginStart="44dp"
                 android:layout_marginTop="432dp">
 
             </TextView>
@@ -152,12 +153,25 @@
                 android:layout_height="54dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="305dp">
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="288dp">
 
             </TextView>
 
+            <Button
+                android:layout_width="137dp"
+                android:id="@+id/review"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="125dp"
+                android:layout_centerHorizontal="true"
+                android:text="SEE REVIEWS"
+                android:textColor="@color/black"
+                android:backgroundTint="#F37878"
+                android:layout_marginBottom="8dp">
 
+            </Button>
 
 
         </RelativeLayout>

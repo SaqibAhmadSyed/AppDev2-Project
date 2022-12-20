@@ -46,7 +46,7 @@ public class CreateUser extends AppCompatActivity {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db = FirebaseDatabase.getInstance().getReference("games");
+                db = FirebaseDatabase.getInstance().getReference("users");
 
                 String firstName = firstN.getText().toString();
                 String lastName = lastN.getText().toString();
@@ -94,7 +94,6 @@ public class CreateUser extends AppCompatActivity {
                             Toast.makeText(CreateUser.this, "This username already exists.", Toast.LENGTH_SHORT).show();
                             return;
                         } else {
-
                             db.child(userN).setValue(users);
 
                             Intent intent = new Intent(CreateUser.this, SignIn.class);
