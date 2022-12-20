@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
@@ -27,6 +28,7 @@ public class CreateUser extends AppCompatActivity {
     Button create;
     EditText firstN, lastN, username, pwd, confirmPwd;
     DatabaseReference db;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,15 @@ public class CreateUser extends AppCompatActivity {
         username = findViewById(R.id.username);
         pwd = findViewById(R.id.password);
         confirmPwd = findViewById(R.id.confirmPassword);
+        back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent g = new Intent(CreateUser.this, MainActivity.class);
+                startActivity(g);
+            }
+        });
 
         create.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -15,6 +15,27 @@
             android:layout_width="match_parent"
             android:layout_height="100dp">
 
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="115dp"
+                android:layout_height="45dp"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                android:src="@drawable/backarrow"
+                android:layout_centerVertical="true">
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="198dp"
+                android:layout_height="74dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="HORIZON"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"/>
+
         </RelativeLayout>
 
 
@@ -27,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="1dp"/>
+                tools:layout_editor_absoluteY="1dp" />
 
         </RelativeLayout>
 

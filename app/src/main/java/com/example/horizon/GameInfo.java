@@ -78,7 +78,8 @@ public class GameInfo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent next = new Intent(GameInfo.this,Web.class);
-                    next.putExtra("title", titlegame);
+                next.putExtra("key", str);
+                next.putExtra("title", titlegame);
                 startActivity(next);
 
             }

@@ -186,13 +186,13 @@
             </TextView>
 
             <Button
+                android:id="@+id/findStore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="continue"
+                android:layout_alignParentBottom="true"
                 android:background="#00000000"
                 android:padding="20dp"
-                android:id="@+id/findStore"
-                android:layout_alignParentBottom="true">
+                android:text="continue">
 
             </Button>
             <ImageView
@@ -225,13 +225,13 @@
             </TextView>
 
             <Button
+                android:id="@+id/setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="continue"
+                android:layout_alignParentBottom="true"
                 android:background="#00000000"
                 android:padding="20dp"
-                android:id="@+id/setting"
-                android:layout_alignParentBottom="true">
+                android:text="continue">
 
             </Button>
             <ImageView

@@ -8,11 +8,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class AdminPage extends AppCompatActivity {
     TextView username;
-    Button userList;
+    Button userList, logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class AdminPage extends AppCompatActivity {
 
         username = findViewById(R.id.username);
         userList = findViewById(R.id.userList);
+        logout = findViewById(R.id.logout);
         String str = getIntent().getStringExtra("key");
         username.setText("WELCOME " + str);
 
@@ -31,6 +33,14 @@ public class AdminPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent adminpage = new Intent(AdminPage.this, UserList.class);
+                startActivity(adminpage);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent adminpage = new Intent(AdminPage.this, SignIn.class);
                 startActivity(adminpage);
             }
         });

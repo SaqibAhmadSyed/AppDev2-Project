@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -43,6 +44,7 @@ public class FindStore extends AppCompatActivity implements OnMapReadyCallback {
     private SupportMapFragment mapFragment;
     private int REQUEST_CODE = 44;
     TextView username;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class FindStore extends AppCompatActivity implements OnMapReadyCallback {
         username = findViewById(R.id.username);
         String str = getIntent().getStringExtra("key");
         username.setText(str);
-        ImageButton back = (ImageButton) findViewById(R.id.back);
+        ImageButton back = findViewById(R.id.back);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

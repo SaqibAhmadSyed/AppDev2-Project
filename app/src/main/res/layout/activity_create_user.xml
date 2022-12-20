@@ -105,4 +105,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
         app:layout_constraintVertical_bias="0.147" />
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="74dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        android:background="#00000000"
+        android:rotation="180"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/backarrow"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

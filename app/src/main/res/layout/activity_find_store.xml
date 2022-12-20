@@ -58,14 +58,13 @@
             </ImageView>
 
             <ImageButton
+                android:id="@+id/back"
                 android:layout_width="115dp"
                 android:layout_height="45dp"
                 android:layout_alignParentBottom="true"
                 android:rotation="180"
                 android:scaleType="fitCenter"
-                android:id="@+id/back"
-                android:src="@drawable/backarrow">
-            </ImageButton>
+                android:src="@drawable/backarrow"></ImageButton>
 
             <TextView
                 android:layout_width="228dp"

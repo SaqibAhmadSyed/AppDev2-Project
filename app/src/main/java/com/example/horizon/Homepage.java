@@ -12,13 +12,14 @@ import android.widget.TextView;
 
 public class Homepage extends AppCompatActivity {
     TextView username;
-    Button profileEdit , availableGames , cart, findStore, news;
+    Button profileEdit , availableGames , cart, findStore, news, setting, logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_homepage);
 
         findStore = findViewById(R.id.findStore);
@@ -27,6 +28,8 @@ public class Homepage extends AppCompatActivity {
         username = findViewById(R.id.username);
         news = findViewById(R.id.news);
         cart = findViewById(R.id.cart);
+        setting = findViewById(R.id.setting);
+        logout = findViewById(R.id.logout);
         String str = getIntent().getStringExtra("key");
         username.setText("WELCOME " + str);
 
@@ -65,6 +68,7 @@ public class Homepage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,5 +78,21 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homepage.this, Setting.class);
+                intent.putExtra("key", str);
+                startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homepage.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

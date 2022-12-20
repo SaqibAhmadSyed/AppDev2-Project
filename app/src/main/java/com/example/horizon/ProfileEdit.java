@@ -56,7 +56,9 @@ public class ProfileEdit extends AppCompatActivity {
                         .setCancelable(false);
 
                 builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    FirebaseDatabase.getInstance().getReference("cart/"+str).removeValue();
                     FirebaseDatabase.getInstance().getReference("users/"+str).removeValue();
+
 
                     Intent i = new Intent(ProfileEdit.this, SignIn.class);
                     Toast.makeText(ProfileEdit.this, "User Deleted", Toast.LENGTH_SHORT).show();

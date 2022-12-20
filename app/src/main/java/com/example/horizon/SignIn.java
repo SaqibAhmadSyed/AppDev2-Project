@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +25,7 @@ import java.util.Objects;
 public class SignIn extends AppCompatActivity {
 
     Button signIn;
+    ImageButton back;
     EditText username, pwd;
 
     @Override
@@ -36,15 +39,24 @@ public class SignIn extends AppCompatActivity {
         signIn = findViewById(R.id.signIn);
         username = findViewById(R.id.username);
         pwd = findViewById(R.id.password);
+        back = findViewById(R.id.back);
+
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!validateUsername() | !validatePassword()){
-
                 } else {
                     checkUser();
                 }
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent g = new Intent(SignIn.this, MainActivity.class);
+                startActivity(g);
             }
         });
     }
@@ -95,7 +107,8 @@ public class SignIn extends AppCompatActivity {
                         pwd.setError("Invalid credentials");
                         pwd.requestFocus();
                     }
-                } else if (username.getText().toString().equals("BOB") && pwd.getText().toString().equals("1")){
+                    //Admin Credential
+                } else if (username.getText().toString().equals("admin") && pwd.getText().toString().equals("1")){
                     Intent intent = new Intent(SignIn.this, AdminPage.class);
                     intent.putExtra("key", loginUsername);
                     startActivity(intent);
