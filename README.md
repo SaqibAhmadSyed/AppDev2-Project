@@ -10,5 +10,7 @@ Android application that contains:
 - Update password
 - Add to cart
 - Checkout Message
+- View game information
+- See its review on the web
 
 All of those features except menu music are informations that are being stored using Firebase database.
